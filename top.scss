@@ -1,0 +1,272 @@
+@font-face {
+  font-family: "SmartFont";
+  src: url("./font/SmartFontUI.ttf");
+}
+
+$black: #2a2a2a;
+$white: #fff;
+$headercolor: #19A388;
+$bodycolor: #EDEDED;
+$theadercolor: #999;
+$tbordercolor: #bbb;
+$tbodycolor: #EAEAEA;
+
+$fontB: 45px;
+$fontN: 26px;
+$fontS: 11px;
+
+$gridLeftWidth: 150px;
+$gridWidth: calc((100vw - #{$gridLeftWidth} - 1px) / 7);
+$gridHeight: 140px;
+
+$buttonGreen: #036351;
+$buttonRed: #A01A1A;
+$buttonYellow: #D6D245;
+
+
+@mixin button($bgcolor,$bordercolor,$w,$h){
+  background-color: $bgcolor;
+  border: $bordercolor solid 5px;
+  width: $w;
+  height: $h;
+  border-radius: 70px;
+}
+
+
+body{
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-color: $bodycolor;
+  font-family: "SmartFont";
+
+  header{
+    width: 100%;
+    height: 170px;
+    background-color: $headercolor;
+    color: $white;
+    padding-top: 70px;
+
+    .page-title{
+      font-size: $fontN;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .time{
+      font-size: $fontB;
+      text-align: center;
+    }
+  }
+
+  main{
+    width: 100%;
+
+    .week-button-box{
+      display: flex;
+      width: 90%;
+      margin: 0 auto;
+      justify-content: space-between;
+
+      button{
+        margin: 40px 0;
+        font-size: $fontN;
+        @include button($tbordercolor,$tbordercolor,200px,100px);
+      }
+    }
+
+    .koma-grid{
+      box-sizing: border-box;
+      width: 100%;
+
+      .koma-head{
+        box-sizing: border-box;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        background-color: $theadercolor;
+
+        .top-left{
+          width: $gridLeftWidth;
+        }
+
+        div{
+          box-sizing: border-box;
+          width: $gridWidth;
+          border: $black solid 1px;
+          color: $white;
+          font-size: $fontN;
+        }
+      }
+
+      .koma-bottom{
+        box-sizing: border-box;
+        display: flex;
+
+        .koma-time{
+          box-sizing: border-box;
+          width: $gridLeftWidth;
+
+          div{
+            box-sizing: border-box;
+            border: $black solid 1px;
+            width: 100%;
+            height: $gridHeight;
+            text-align: center;
+
+            &:nth-child(2n){
+              background-color: $white;
+            }
+
+            p{
+              margin: calc(#{$gridHeight} / 3.3) 0 0 0;
+              font-size: $fontN;
+
+              span{
+                font-size: $fontS;
+              }
+            }
+          }
+        }
+
+        .koma-main{
+          width: calc(100% - #{$gridLeftWidth});
+          border-collapse: collapse;
+          border-spacing: 0;
+
+          tr{
+
+            &:nth-child(4n-1){
+              background-color: $white;
+            }
+            &:nth-child(4n){
+              background-color: $white;
+            }
+
+            td{
+              text-align: center;
+              box-sizing: border-box;
+              width: $gridWidth;
+              height: calc(#{$gridHeight} / 2);
+              border: $black 1px solid;
+              font-size: $fontS;
+
+              &.no-sound-time{
+                background-color: $white;
+                font-size: $fontN;
+              }
+
+              &.off-koma{
+                background-color: $buttonGreen;
+
+                a{
+                  color: $white;
+                }
+              }
+
+              &.move-koma{
+                background-color: $buttonYellow;
+
+                a{
+                  color: $black;
+                }
+              }
+
+              a{
+                text-decoration: none;
+                color: $black;
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .detail{
+      font-size: $fontN;
+      margin: 50px auto 0;
+      width: 80%;
+
+      th,td{
+        padding: 15px 20px;
+      }
+
+      .detail-aki th{
+        background-color: $white;
+      }
+
+      .detail-green th{
+        background-color: $buttonGreen;
+        color: $white;
+      }
+
+      .detail-yellow th{
+        background-color: $buttonYellow;
+      }
+    }
+  }
+
+  .modaal-content-container{
+    .modal-top{
+      margin-bottom: 100px;
+
+      p{
+        font-size: calc(#{$fontN} + 10px);
+      }
+    }
+
+    button{
+      display: block;
+      margin: 50px auto;
+      width: 70%;
+      font-size: calc(#{$fontN} + 10px);
+      color: $white;
+
+      &.modaal-close{
+        position: static;
+      }
+
+      &.modaal-close:before,
+      &.modaal-close:after{
+        display: none;
+      }
+    }
+
+    .off-button{
+      @include button($buttonGreen,$buttonGreen,80%,140px);
+    }
+
+    .delete-button{
+      @include button($buttonRed,$buttonRed,80%,140px);
+    }
+
+    .on-button,
+    .in-button{
+      color: $black;
+      @include button($white,$white,80%,140px);
+    }
+
+    .move-button{
+      color: $black;
+      @include button($buttonYellow,$buttonYellow,80%,140px);
+    }
+
+
+    .inputBandName{
+      display: none;
+      width: 70%;
+      height: 80px;
+      border-radius: 10px;
+      font-size: $fontN;
+    }
+
+    .enter-button{
+      color: $black;
+      display: none;
+      @include button($white,$white,80%,140px);
+    }
+
+  }
+}

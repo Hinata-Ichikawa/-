@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>軽音コマ表｜名古屋市立大学</title>
+<link rel="stylesheet" href="modaal.css">
+<link rel="stylesheet" href="top.css">
+<meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+<body>
+  <header>
+    <h1 class="page-title">軽音コマ表</h1>
+    <h2 class="time"><span id="js-year"></span>年<span id="js-month"></span>月</h2>
+  </header>
+  <main>
+    <div class="week-button-box">
+      <button class="week-button" onclick="pre_week()">< 先週</button>
+      <button class="week-button" onclick="next_week()">翌週 ></button>
+    </div>
+    <div class="koma-grid">
+      <div id="js-week" class="koma-head">
+      </div>
+      <div class="koma-bottom">
+        <div class="koma-time">
+          <div><p>9-11</p></div>
+          <div><p>11-13</p></div>
+          <div><p>13-15</p></div>
+          <div><p>15-17</p></div>
+          <div><p>17-19<br><span>(平日は17-18.5)</span></p></div>
+          <div><p>19-21<br><span>(平日は18.5-20)</span></p></div>
+        </div>
+        <table class="koma-main">
+          <tr>
+            <td colspan="5" rowspan="8" class="no-sound-time">音出し禁止</td>
+            <td><a href="#modal" class="modal">はなこ</a></td>
+            <td><a href="#modal" class="modal">ビーム(仮)</a></td>
+          </tr>
+          <tr>
+            <td><a href="#modal" class="modal">She is absent</a></td>
+            <td class="aki-koma"><a href="#modal" class="modal">　　　</a></td>
+          </tr>
+          <tr>
+            <td><a href="#modal" class="modal">節ドロ</a></td>
+            <td><a href="#modal" class="modal">線香花火爆発</a></td>
+          </tr>
+          <tr>
+            <td><a href="#modal" class="modal">前髪長いーズ</a></td>
+            <td><a href="#modal" class="modal">新バンド(仮)</a></td>
+          </tr>
+          <tr>
+            <td><a href="#modal" class="modal">アルカラ</a></td>
+            <td><a href="#modal" class="modal">BIWA⭐️</a></td>
+          </tr>
+          <tr>
+            <td><a href="#modal" class="modal">GU(仮)</a></td>
+            <td><a href="#modal" class="modal">BAND-MAID</a></td>
+          </tr>
+          <tr>
+            <td><a href="#modal" class="modal">選考穴見爆誕</a></td>
+            <td><a href="#modal" class="modal">Noisy House</a></td>
+          </tr>
+          <tr>
+            <td class="aki-koma"><a href="#modal" class="modal"> 　　</a></td>
+            <td><a href="#modal" class="modal">みさと(仮)</a></td>
+          </tr>
+          <tr>
+            <td><a href="#modal" class="modal">斎藤(仮)</a></td>
+            <td><a href="#modal" class="modal">SnitNit</a></td>
+            <td><a href="#modal" class="modal">まいにちメロンパン</a></td>
+            <td><a href="#modal" class="modal">TAIDARS</a></td>
+            <td><a href="#modal" class="modal">Jack in the box</a></td>
+            <td><a href="#modal" class="modal">KOHAKU</a></td>
+            <td><a href="#modal" class="modal">CCC</a></td>
+          </tr>
+          <tr>
+            <td><a href="#modal" class="modal">良質タックル</a></td>
+            <td><a href="#modal" class="modal">こんぺいとう</a></td>
+            <td><a href="#modal" class="modal">girls talk</a></td>
+            <td><a href="#modal" class="modal">ワンオク</a></td>
+            <td><a href="#modal" class="modal">スリーピー</a></td>
+            <td><a href="#modal" class="modal">ivy</a></td>
+            <td><a href="#modal" class="modal">カラスは真っ白</a></td>
+          </tr>
+          <tr>
+            <td><a href="#modal" class="modal">マリビル</a></td>
+            <td><a href="#modal" class="modal">The White Daughter</a></td>
+            <td><a href="#modal" class="modal">SUPER BALL</a></td>
+            <td><a href="#modal" class="modal">Halo at 四畳半</a></td>
+            <td><a href="#modal" class="modal">ディスパッチ</a></td>
+            <td class="aki-koma"><a href="#modal" class="modal">　　　</a></td>
+            <td><a href="#modal" class="modal">backnumber</a></td>
+          </tr>
+          <tr>
+            <td><a href="#modal" class="modal">オーバーオールズ</a></td>
+            <td class="aki-koma"><a href="#modal" class="modal">　　　</a></td>
+            <td><a href="#modal" class="modal">Route66</a></td>
+            <td><a href="#modal" class="modal">ライラミラライラ</a></td>
+            <td><a href="#modal" class="modal">NCU</a></td>
+            <td class="aki-koma"><a href="#modal" class="modal">　　　</a></td>
+            <td class="aki-koma"><a href="#modal" class="modal">　　　</a></td>
+          </tr>
+        </table>
+        <div id="modal" style="display:none;">
+          <!-- <div class="modal-top">
+            <p class="date">8月12日(日)</p>
+            <p class="bandName"></p>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <table class="detail" border="1">
+      <tbody>
+        <tr class="detail-aki">
+          <th>空欄</th>
+          <td>空きコマ</td>
+        </tr>
+        <tr class="detail-green">
+          <th>緑色</th>
+          <td>OFFになっているコマ</td>
+        </tr>
+        <tr class="detail-yellow">
+          <th>黄色</th>
+          <td>臨時で移動したコマ</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="modaal.min.js"></script>
+  <script src="top.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+@font-face {
+  font-family: "SmartFont";
+  src: url("./font/SmartFontUI.ttf"); }
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-color: #EDEDED;
+  font-family: "SmartFont"; }
+  body header {
+    width: 100%;
+    height: 170px;
+    background-color: #19A388;
+    color: #fff;
+    padding-top: 70px; }
+    body header .page-title {
+      font-size: 26px;
+      margin: 10px 0;
+      text-align: center; }
+    body header .time {
+      font-size: 45px;
+      text-align: center; }
+  body main {
+    width: 100%; }
+    body main .week-button-box {
+      display: flex;
+      width: 90%;
+      margin: 0 auto;
+      justify-content: space-between; }
+      body main .week-button-box button {
+        margin: 40px 0;
+        font-size: 26px;
+        background-color: #bbb;
+        border: #bbb solid 5px;
+        width: 200px;
+        height: 100px;
+        border-radius: 70px; }
+    body main .koma-grid {
+      box-sizing: border-box;
+      width: 100%; }
+      body main .koma-grid .koma-head {
+        box-sizing: border-box;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        background-color: #999; }
+        body main .koma-grid .koma-head .top-left {
+          width: 150px; }
+        body main .koma-grid .koma-head div {
+          box-sizing: border-box;
+          width: calc((100vw - 150px - 1px) / 7);
+          border: #2a2a2a solid 1px;
+          color: #fff;
+          font-size: 26px; }
+      body main .koma-grid .koma-bottom {
+        box-sizing: border-box;
+        display: flex; }
+        body main .koma-grid .koma-bottom .koma-time {
+          box-sizing: border-box;
+          width: 150px; }
+          body main .koma-grid .koma-bottom .koma-time div {
+            box-sizing: border-box;
+            border: #2a2a2a solid 1px;
+            width: 100%;
+            height: 140px;
+            text-align: center; }
+            body main .koma-grid .koma-bottom .koma-time div:nth-child(2n) {
+              background-color: #fff; }
+            body main .koma-grid .koma-bottom .koma-time div p {
+              margin: calc(140px / 3.3) 0 0 0;
+              font-size: 26px; }
+              body main .koma-grid .koma-bottom .koma-time div p span {
+                font-size: 11px; }
+        body main .koma-grid .koma-bottom .koma-main {
+          width: calc(100% - 150px);
+          border-collapse: collapse;
+          border-spacing: 0; }
+          body main .koma-grid .koma-bottom .koma-main tr:nth-child(4n-1) {
+            background-color: #fff; }
+          body main .koma-grid .koma-bottom .koma-main tr:nth-child(4n) {
+            background-color: #fff; }
+          body main .koma-grid .koma-bottom .koma-main tr td {
+            text-align: center;
+            box-sizing: border-box;
+            width: calc((100vw - 150px - 1px) / 7);
+            height: calc(140px / 2);
+            border: #2a2a2a 1px solid;
+            font-size: 11px; }
+            body main .koma-grid .koma-bottom .koma-main tr td.no-sound-time {
+              background-color: #fff;
+              font-size: 26px; }
+            body main .koma-grid .koma-bottom .koma-main tr td.off-koma {
+              background-color: #036351; }
+              body main .koma-grid .koma-bottom .koma-main tr td.off-koma a {
+                color: #fff; }
+            body main .koma-grid .koma-bottom .koma-main tr td.move-koma {
+              background-color: #D6D245; }
+              body main .koma-grid .koma-bottom .koma-main tr td.move-koma a {
+                color: #2a2a2a; }
+            body main .koma-grid .koma-bottom .koma-main tr td a {
+              text-decoration: none;
+              color: #2a2a2a;
+              width: 100%;
+              height: 100%; }
+    body main .detail {
+      font-size: 26px;
+      margin: 50px auto 0;
+      width: 80%; }
+      body main .detail th, body main .detail td {
+        padding: 15px 20px; }
+      body main .detail .detail-aki th {
+        background-color: #fff; }
+      body main .detail .detail-green th {
+        background-color: #036351;
+        color: #fff; }
+      body main .detail .detail-yellow th {
+        background-color: #D6D245; }
+  body .modaal-content-container .modal-top {
+    margin-bottom: 100px; }
+    body .modaal-content-container .modal-top p {
+      font-size: calc(26px + 10px); }
+  body .modaal-content-container button {
+    display: block;
+    margin: 50px auto;
+    width: 70%;
+    font-size: calc(26px + 10px);
+    color: #fff; }
+    body .modaal-content-container button.modaal-close {
+      position: static; }
+    body .modaal-content-container button.modaal-close:before, body .modaal-content-container button.modaal-close:after {
+      display: none; }
+  body .modaal-content-container .off-button {
+    background-color: #036351;
+    border: #036351 solid 5px;
+    width: 80%;
+    height: 140px;
+    border-radius: 70px; }
+  body .modaal-content-container .delete-button {
+    background-color: #A01A1A;
+    border: #A01A1A solid 5px;
+    width: 80%;
+    height: 140px;
+    border-radius: 70px; }
+  body .modaal-content-container .on-button,
+  body .modaal-content-container .in-button {
+    color: #2a2a2a;
+    background-color: #fff;
+    border: #fff solid 5px;
+    width: 80%;
+    height: 140px;
+    border-radius: 70px; }
+  body .modaal-content-container .move-button {
+    color: #2a2a2a;
+    background-color: #D6D245;
+    border: #D6D245 solid 5px;
+    width: 80%;
+    height: 140px;
+    border-radius: 70px; }
+  body .modaal-content-container .inputBandName {
+    display: none;
+    width: 70%;
+    height: 80px;
+    border-radius: 10px;
+    font-size: 26px; }
+  body .modaal-content-container .enter-button {
+    color: #2a2a2a;
+    display: none;
+    background-color: #fff;
+    border: #fff solid 5px;
+    width: 80%;
+    height: 140px;
+    border-radius: 70px; }
+
+/*# sourceMappingURL=top.css.map */
